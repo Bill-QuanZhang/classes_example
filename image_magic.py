@@ -4,6 +4,7 @@
 from PIL import Image
 
 # load the image (pumpkin)
+# Open an output image that's the same size
 image = Image.open('./halloween-unsplash.jpg')
 output_image = Image.open('./halloween-unsplash.jpg')
 
