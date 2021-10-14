@@ -26,7 +26,7 @@ for y in range(image_height):
         # Grab pixel information for THIS pixel
         pixel = image.getpixel((x, y))
 
-        print(f"\nPixel Location: {x}, {y}")
+        # print(f"\nPixel Location: {x}, {y}")
 
         # red value of the pixel
         # print(f"red: {a_pixel[0]}")
@@ -45,7 +45,7 @@ for y in range(image_height):
 
         # create a gray pixel
         gray_pixel = (average, average, average)
-        print(gray_pixel)  # test
+        # print(gray_pixel)  # test
 
         # put that in the new image
         output_image.putpixel((x, y), gray_pixel)
