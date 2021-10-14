@@ -33,6 +33,26 @@ def to_greyscale(pixel: tuple) -> tuple:
     return average, average, average
 
 
+def to_greyscale_luma(pixel: tuple) -> tuple:
+    """Convert a pixel to greyscale.
+
+        Args:
+            pixel: a 3-tuple of ints from
+                0 - 255, e.g. (142, 54, 53)
+                represents (red, green, blue)
+
+        Returns:
+            a 3-tuple pixel (r, g, b) in
+            greyscale
+        """
+
+    red, green, blue = pixel
+
+    grey = int(red * 0.3 + green * 0.59 + blue * 0.11)
+
+    return grey, grey, grey
+
+
 # load the image (pumpkin)
 # Open an output image that's the same size
 image = Image.open('./halloween-unsplash.jpg')
@@ -64,7 +84,8 @@ for y in range(image_height):
         # print(f"blue: {a_pixel[2]}")
 
         # add function call to to_greyscale()
-        grey_pixel = to_greyscale(this_pixel)
+        # grey_pixel = to_greyscale(this_pixel)
+        grey_pixel = to_greyscale_luma(this_pixel)
 
         # put that in the new image
         output_image.putpixel((x, y), grey_pixel)
