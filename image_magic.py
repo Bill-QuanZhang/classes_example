@@ -68,6 +68,8 @@ def brighter(pixel: tuple) -> tuple:
     Args:
         pixel: a 3-tuple of (red, green, blue)
             subpixels
+        # magnitude: an int from 0-255 that
+        #     indicates
 
     Returns:
         a 3-tuple representing a brighter pixel
@@ -78,19 +80,21 @@ def brighter(pixel: tuple) -> tuple:
     # green = pixel[1]
     # blue = pixel[2]
     #
+    # MAX = 255
+    #
     # increase the value by some number
-    # if red + 25 > 255:
-    #     red = 255
+    # if red + 25 > MAX:
+    #     red = MAX
     # else:
     #     red += 25
     #
-    # if green + 25 > 255:
-    #     green = 255
+    # if green + 25 > MAX:
+    #     green = MAX
     # else:
     #     green += 25
     #
-    # if blue + 25 > 255:
-    #     blue = 255
+    # if blue + 25 > MAX:
+    #     blue = MAX
     # else:
     #     blue += 25
     #
