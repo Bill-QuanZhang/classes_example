@@ -72,6 +72,30 @@ def brighter(pixel: tuple) -> tuple:
     Returns:
         a 3-tuple representing a brighter pixel
     """
+    # TEACHER'S
+    # break down the pixel
+    # red = pixel[0]
+    # green = pixel[1]
+    # blue = pixel[2]
+    #
+    # increase the value by some number
+    # if red + 25 > 255:
+    #     red = 255
+    # else:
+    #     red += 25
+    #
+    # if green + 25 > 255:
+    #     green = 255
+    # else:
+    #     green += 25
+    #
+    # if blue + 25 > 255:
+    #     blue = 255
+    # else:
+    #     blue += 25
+    #
+    # return it
+    # return red, green, blue
 
     red, green, blue = pixel
 
