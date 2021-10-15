@@ -62,6 +62,37 @@ def to_greyscale_luma(pixel: tuple) -> tuple:
     return grey, grey, grey
 
 
+def brighter(pixel: tuple) -> tuple:
+    """increase the brightness of a pixel
+
+    Args:
+        pixel: a 3-tuple of (red, green, blue)
+            subpixels
+
+    Returns:
+        a 3-tuple representing a brighter pixel
+    """
+
+    red, green, blue = pixel
+
+    if int(red) < 205:
+        brighter_red = int(red) + 50
+    else:
+        brighter_red = 255
+
+    if int(green) < 205:
+        brighter_green = int(green) + 50
+    else:
+        brighter_green = 255
+
+    if int(blue) < 205:
+        brighter_blue = int(blue) + 50
+    else:
+        brighter_blue = 255
+
+    return brighter_red, brighter_green, brighter_blue
+
+
 # load the image (pumpkin)
 # Open an output image that's the same size
 image = Image.open('./halloween-unsplash.jpg')
@@ -93,9 +124,12 @@ for y in range(image_height):
         # print(f"blue: {a_pixel[2]}")
 
         # add function call to to_greyscale()
-        grey_pixel = to_greyscale(this_pixel, "luma")
+        # grey_pixel = to_greyscale(this_pixel, "luma")
         # grey_pixel = to_greyscale_luma(this_pixel)
+        brighter_pixel = brighter(this_pixel)
 
         # put that in the new image
-        output_image.putpixel((x, y), grey_pixel)
-output_image.save('greyscale_luma2.jpg')
+        # output_image.putpixel((x, y), grey_pixel)
+        output_image.putpixel((x, y), brighter_pixel)
+# output_image.save('greyscale_luma2.jpg')
+output_image.save('brighter.jpg')
