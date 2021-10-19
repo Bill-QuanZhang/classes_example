@@ -62,14 +62,16 @@ def to_greyscale_luma(pixel: tuple) -> tuple:
     return grey, grey, grey
 
 
+# def brightness(pixel: tuple, magnitude: int) -> tuple:
 def brighter(pixel: tuple) -> tuple:
     """increase the brightness of a pixel
 
     Args:
         pixel: a 3-tuple of (red, green, blue)
             subpixels
-        # magnitude: an int from 0-255 that
-        #     indicates
+        # magnitude: an int from -255 to 255 that
+        #     indicates how much to increase
+        #     BRIGHTNESS
 
     Returns:
         a 3-tuple representing a brighter pixel
@@ -81,22 +83,29 @@ def brighter(pixel: tuple) -> tuple:
     # blue = pixel[2]
     #
     # MAX = 255
+    # MIN = 0
     #
     # increase the value by some number
-    # if red + 25 > MAX:
+    # if red + magnitude > MAX:
     #     red = MAX
+    # elif red + magnitude < MIN:
+    #     red = MIN
     # else:
-    #     red += 25
+    #     red += magnitude
     #
-    # if green + 25 > MAX:
+    # if green + magnitude > MAX:
     #     green = MAX
+    # elif green + magnitude < MIN:
+    #     green = MIN
     # else:
-    #     green += 25
+    #     green += magnitude
     #
-    # if blue + 25 > MAX:
+    # if blue + magnitude > MAX:
     #     blue = MAX
+    # elif blue + magnitude < MIN:
+    #     blue = MIN
     # else:
-    #     blue += 25
+    #     blue += magnitude
     #
     # return it
     # return red, green, blue
