@@ -2,6 +2,9 @@
 
 # Create some classes and projects
 
+import math
+
+
 class Shape:
     """Represents a 2-dimensional polygon
 
@@ -24,6 +27,28 @@ class Shape:
         return self.num_sides * self.side_length
 
 
+class Circle(Shape):
+    """Represents a circle which IS A shape.
+
+    Attributes:
+        radius: A float indicating the radius
+    """
+
+    def __init__(self, radius: float = 5):
+        """Creates a circle with default radius of 5."""
+        # Call the superclass constructor
+        super().__init__()
+
+        self.radius = radius
+
+    def area(self) -> float:
+        """Return the area of the circle."""
+        return math.pi * self.radius ** 2
+
+
 some_shape = Shape()
 print(some_shape.num_sides)
 print(some_shape.perimeter())
+
+some_circle = Circle(11)
+print(some_circle.area())
