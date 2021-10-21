@@ -40,6 +40,7 @@ class Circle(Shape):
         super().__init__()
 
         self.radius = radius
+        self.num_sides = 1
 
     def area(self) -> float:
         """Return the area of the circle."""
@@ -52,3 +53,4 @@ print(some_shape.perimeter())
 
 some_circle = Circle(11)
 print(some_circle.area())
+print(some_circle.num_sides)
