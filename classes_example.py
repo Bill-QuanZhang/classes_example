@@ -46,6 +46,10 @@ class Circle(Shape):
         """Return the area of the circle."""
         return math.pi * self.radius ** 2
 
+    def perimeter(self) -> float:
+        """Return the perimeter of the circle."""
+        return math.pi * self.radius * 2
+
 
 some_shape = Shape()
 print(some_shape.num_sides)
@@ -54,3 +58,4 @@ print(some_shape.perimeter())
 some_circle = Circle(11)
 print(some_circle.area())
 print(some_circle.num_sides)
+print(some_circle.perimeter())
